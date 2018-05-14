@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*  <!--需求:当天周几-->
+    var date=new Date();
+//    console.log(date);
+//    console.log(date.getDay());
+    var numb=date.getDay();
+    switch (numb){
+        case 1:
+            alert("今天星期一");
+            break;
+            case 2:
+            alert("今天星期二");
+            break;
+            case 3:
+            alert("今天星期三");
+            break;
+            case 4:
+            alert("今天星期四");
+            break;
+            case 5:
+            alert("今天星期五");
+            break;
+            case 6:
+            alert("今天星期六");
+            break;
+            case 0:
+            alert("今天星期七");
+            break;
+    }*/
+
+
+    <!--需求:百分制转换为优良中差-->
+// 思路1：获取值，然然后判断在90-100,80-90，...
+// 思路2:获取值,然后除以10,在取整，得==10满分，==9优，==8良，==7或6中，==6以下差
+//    步骤：1.获取值，然后除以10；
+//          2.判断
+ /*   var num=prompt("请输入成绩：");
+    num=parseInt(num/10);
+    switch (num){
+        case 10:
+            alert("满分");
+            break;
+        case 9:
+            alert("优");
+            break;
+        case 8:
+            alert("良");
+            break;
+        case 7:
+        case 6:
+            alert("中");
+            break;
+        default:
+            alert("差");
+    }*/
+
+
+// 打印1-100
+ /*   for(var i=1;i<=100;i++){
+        console.log(i);
+    }
+    */
+// 打印1-100的和
+//  计数器思想
+ /*   var sum=0;//sum光初始化不赋值为underfined,结果为nan
+    for( var i=1;i<=100;i++){
+        sum=sum+i;
+
+    }
+  console.log(sum);*/
+
+ //求1-100的和，平均值
+   /* var sum=0;
+    for(var i=1;i<=100;i++){
+        sum+=i;
+    }
+    var avg=sum/(i-1);//跳出循环时i为101，为了代码的健壮性，写成这，方便i改为任意数；
+    console.log(avg);*/
+
+   //求1-100的所有偶数和，奇数和；
+ /*   var sumOdd=0;//所有奇数和；
+    var sumEven=0;//所有偶数和；
+    for(var i=1;i<=100;i++){
+        if(i%2===0){
+            sumEven+=i;
+        }
+        else{
+            sumOdd+=i;
+        }
+    }
+    console.log(sumOdd);
+    console.log(sumEven);*/
+
+ //需求：本金10000元，利息0.003，存5年，求总钱
+  //步骤：1.前一年的本金加利息为下一年的本金
+    //    2.共循环5次
+
+   /* var money=10000;
+    for (var i=1;i<=5;i++){
+        money=money+money*0.003;
+    }
+    console.log(money);*/
+
+   //优化代码
+ /* var money=10000;
+  var rate=0.003;
+  for (var i=1;i<=5;i++){
+//      money=money*(1+rate);
+      money*=1+rate;
+  }
+  alert(money);*/
+
+ //一对兔子每个月生一对xiao兔子，小兔子在出生后三个月起每个月生 一对小兔子，一年会有多少对?   1 1 2 3 5 8 11 斐波那契数列 n3=n1+n2,n4=n2+n3...
+    //步骤1.定义两个变量和一个中间变量
+    //步骤2.然后利用循环交换变量和以及变量
+    //步骤3.直接打印num2
+ /*    var num1=1;
+     var num2=1;
+     for(var i=3;i<=12;i++){ //从3开始循环到12，否则从1-10；
+         var temp=num2;
+         num2=num1+num2;
+         num1=temp;
+     }
+     console.log(num2);
+*/
+ //打印一个长宽9的正方形
+/*
+    for(var j=1;j<=9;j++){//9行9个,在套第三层9个9行9，在套第四层为正方形，
+          for(var i=1;i<=9;i++){//一行9个
+          document.write("☆ ");
+          }
+          document.write("<br>");
+      }
+  document.write("<br>");
+    //打印一个长宽9的三角形
+     for(var j=1;j<=9;j++){//外循环控制行，内循环控制列
+           for(var i=1;i<=j;i++){//一行9个
+           document.write("☆ ");
+           }
+           document.write("<br>");
+       }
+  */
+
+/*  for(var j=1;j<=9;j++){//外循环控制行，内循环控制列
+      for(var i=1;i<=j;i++){//一行9个
+          document.write(i+"*"+j+"="+i*j+"&nbsp");
+      }
+      document.write("<br>");
+  }*/
+    // language=HTML
+/*    document.write("<table border='1'>");
+        for(var i=1;i<=9;i++){
+            document.write("<tr>");
+            for(var j=1;j<=i;j++){
+                document.write("<td>");
+                document.write(j+"*"+i+"="+i*j);
+                document.write("</td>");
+            }
+            document.write("</tr>");
+
+        }
+    document.write("</table>");*/
+
+//1-100*
+/*var product=1;
+for(var i=1;i<=10;i++){
+    product*=i;
+}
+alert(product);*/
+
+//计算1-100不能被7整除的数的和
+/*
+    var sum=0;
+      for(var i=1;i<=100;i++){
+          if(i%7!==0);
+              sum+=i;
+      }
+      alert(sum);
+  */
+  //计算1-100不能被7整除的数的和
+
+ /* var sum=0;
+  for(var i=1;i<=100;i++){
+      if(i%7==0)
+          continue;
+      sum+=i;
+
+  }
+  alert(sum);*/
+//1-100不能被3整除的整数和大于2000的输出
+ /* var sum=0;
+    for(var i=1;i<=100;i++){
+        if(i%3===0){
+        continue;
+        }
+        else{
+            sum+=i;
+            if(sum>=2000) {
+                console.log(sum);
+            }
+        }
+
+    }*/
+
+ //200-300第一个能被7整除 的数
+ /*   for(var i=200;i<=300;i++){
+        if(i%7===0){
+            alert(i);
+            break;
+        }
+    }
+*/
+
+ //whlie sum
+ /*   var sumwhile=0;
+    var i=1;
+    while(i<101){
+        sumwhile+=i;
+        i++;
+  }*/
+/* var i=1;
+ var sumwhile=0;
+  do{
+        sumwhile+=i;
+        i++;
+  }*/
+//死循环求1-100的和
+/* var sum=0;
+ var i=1;
+  while(true){
+      sum+=i;
+      i++;
+      if(i>100){
+          break;
+      }
+  }
+  alert(sum);*/
+
+//需求：点击取消一直弹窗下去，点击确定，立马结婚
+    do{
+        var bool=confirm("我很丑，但我很温柔，求求你了，嫁给我");
+        if(bool){
+            alert("我们去三亚拍婚纱，现在才三折");
+        }
+    }
+    while(!bool)//如果点击取消，bool值是false，为了进入下一次循环，把他变为！
+</script>
+</body>
+</html>
